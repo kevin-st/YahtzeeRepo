@@ -20,6 +20,7 @@ namespace Yahtzee
       InitializeComponent();
       controller = c;
       holdBtn.BackColor = SystemColors.Control;
+      TeerlingLabel.BackColor = Color.White;
     }
 
     public bool IsOnHold
