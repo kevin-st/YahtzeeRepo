@@ -36,29 +36,7 @@ namespace Yahtzee
     private void button1_Click(object sender, EventArgs e)
     {
       controller.Werp();
-
-      int nieuwAantalOgen = controller.teerlingModel.AantalOgen;
-      switch (nieuwAantalOgen)
-      {
-        case 1:
-          TeerlingLabel.Image = Image.FromFile("dice_1.gif");
-          break;
-        case 2:
-          TeerlingLabel.Image = Image.FromFile("dice_2.gif");
-          break;
-        case 3:
-          TeerlingLabel.Image = Image.FromFile("dice_3.gif");
-          break;
-        case 4:
-          TeerlingLabel.Image = Image.FromFile("dice_4.gif");
-          break;
-        case 5:
-          TeerlingLabel.Image = Image.FromFile("dice_5.gif");
-          break;
-        case 6:
-          TeerlingLabel.Image = Image.FromFile("dice_6.gif");
-          break;
-      } 
+      UpdateUI();
     }
 
     public void UpdateUI()
