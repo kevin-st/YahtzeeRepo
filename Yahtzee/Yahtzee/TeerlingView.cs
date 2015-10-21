@@ -19,6 +19,7 @@ namespace Yahtzee
     {
       InitializeComponent();
       controller = c;
+      holdBtn.BackColor = SystemColors.Control;
     }
 
     public bool IsOnHold
@@ -37,13 +38,53 @@ namespace Yahtzee
       controller.Werp();
 
       int nieuwAantalOgen = controller.teerlingModel.AantalOgen;
-      TeerlingLabel.Text = nieuwAantalOgen.ToString();
+      switch (nieuwAantalOgen)
+      {
+        case 1:
+          TeerlingLabel.Image = Image.FromFile("dice_1.gif");
+          break;
+        case 2:
+          TeerlingLabel.Image = Image.FromFile("dice_2.gif");
+          break;
+        case 3:
+          TeerlingLabel.Image = Image.FromFile("dice_3.gif");
+          break;
+        case 4:
+          TeerlingLabel.Image = Image.FromFile("dice_4.gif");
+          break;
+        case 5:
+          TeerlingLabel.Image = Image.FromFile("dice_5.gif");
+          break;
+        case 6:
+          TeerlingLabel.Image = Image.FromFile("dice_6.gif");
+          break;
+      } 
     }
 
     public void UpdateUI()
     {
       int nieuwAantalOgen = controller.teerlingModel.AantalOgen;
-      TeerlingLabel.Text = nieuwAantalOgen.ToString();
+      switch (nieuwAantalOgen)
+      {
+        case 1:
+          TeerlingLabel.Image = Image.FromFile("dice_1.gif");
+          break;
+        case 2:
+          TeerlingLabel.Image = Image.FromFile("dice_2.gif");
+          break;
+        case 3:
+          TeerlingLabel.Image = Image.FromFile("dice_3.gif");
+          break;
+        case 4:
+          TeerlingLabel.Image = Image.FromFile("dice_4.gif");
+          break;
+        case 5:
+          TeerlingLabel.Image = Image.FromFile("dice_5.gif");
+          break;
+        case 6:
+          TeerlingLabel.Image = Image.FromFile("dice_6.gif");
+          break;
+      }
     }
 
     public void HideWerpBtn()
@@ -55,9 +96,9 @@ namespace Yahtzee
       TeerlingWerpBtn.Show();
     }
 
-    public void ClearText()
+    public void ClearImage()
     {
-      TeerlingLabel.Text = "";
+      TeerlingLabel.Image = null;
     }
 
     public void ResetHold()

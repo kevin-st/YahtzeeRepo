@@ -58,9 +58,9 @@ namespace Yahtzee
       view.ShowWerpBtn();
     }
 
-    public void ClearText()
+    public void ClearImage()
     {
-      view.ClearText();
+      view.ClearImage();
     }
 
     public void ResetHold()

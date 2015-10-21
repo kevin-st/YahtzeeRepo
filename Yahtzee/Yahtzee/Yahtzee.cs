@@ -85,7 +85,7 @@ namespace Yahtzee
       scoreController.scoreModel.CurrentScore = 0;
       for (int i = 0; i < aantalTeerlingen; i++)
       {
-        teerlingen[i].ClearText();
+        teerlingen[i].ClearImage();
         teerlingen[i].ResetHold();
       }
       scoreController.UpdateScore();
