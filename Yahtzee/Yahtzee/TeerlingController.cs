@@ -30,15 +30,18 @@ namespace Yahtzee
 
     public void Werp()
     {
-      //vraagt aan model om aantal ogen te updaten
-      Random random = new Random(seed);
+      if (!view.IsOnHold)
+      {
+        //vraagt aan model om aantal ogen te updaten
+        Random random = new Random(seed);
 
-      int aantalOgen = random.Next(1, 7);
-      
+        int aantalOgen = random.Next(1, 7);
 
-      teerlingModel.AantalOgen = aantalOgen;
-      Console.WriteLine(aantalOgen);
-      seed += aantalOgen;
+
+        teerlingModel.AantalOgen = aantalOgen;
+        Console.WriteLine(aantalOgen);
+        seed += aantalOgen;
+      }
     }
 
     public void UpdateUI()
@@ -60,5 +63,9 @@ namespace Yahtzee
       view.ClearText();
     }
 
+    public void ResetHold()
+    {
+      view.ResetHold();
+    }
   }
 }

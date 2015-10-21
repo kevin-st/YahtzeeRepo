@@ -13,11 +13,18 @@ namespace Yahtzee
   public partial class TeerlingView : UserControl
   {
     private TeerlingController controller;
+    private bool isOnHold = false;
 
     public TeerlingView(TeerlingController c)
     {
       InitializeComponent();
       controller = c;
+    }
+
+    public bool IsOnHold
+    {
+      get { return isOnHold; }
+      set { isOnHold = value; }
     }
 
     private void TeerlingView_Load(object sender, EventArgs e)
@@ -53,5 +60,24 @@ namespace Yahtzee
       TeerlingLabel.Text = "";
     }
 
+    public void ResetHold()
+    {
+      holdBtn.BackColor = SystemColors.Control;
+      isOnHold = false;
+    }
+
+    private void button1_Click_1(object sender, EventArgs e)
+    {
+      if(!isOnHold)
+      {
+        isOnHold = true;
+        holdBtn.BackColor = Color.Red;
+      }
+      else if(isOnHold)
+      {
+        isOnHold = false;
+        holdBtn.BackColor = SystemColors.Control;
+      }
+    }
   }
 }

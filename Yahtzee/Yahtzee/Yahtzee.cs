@@ -12,7 +12,7 @@ namespace Yahtzee
 {
   public partial class Yahtzee : Form
   {
-    int aantalTeerlingen = 3;
+    int aantalTeerlingen = 5;
     int maxAantalWorpen = 3;
     int aantalWorpen;
     List<TeerlingController> teerlingen = new List<TeerlingController>();
@@ -86,6 +86,7 @@ namespace Yahtzee
       for (int i = 0; i < aantalTeerlingen; i++)
       {
         teerlingen[i].ClearText();
+        teerlingen[i].ResetHold();
       }
       scoreController.UpdateScore();
       scoreController.UpdateUI();

@@ -40,18 +40,18 @@ namespace Yahtzee
       // 
       // AlgemeneWerpBtn
       // 
-      this.AlgemeneWerpBtn.Location = new System.Drawing.Point(21, 152);
+      this.AlgemeneWerpBtn.Location = new System.Drawing.Point(22, 175);
       this.AlgemeneWerpBtn.Name = "AlgemeneWerpBtn";
-      this.AlgemeneWerpBtn.Size = new System.Drawing.Size(402, 24);
+      this.AlgemeneWerpBtn.Size = new System.Drawing.Size(698, 24);
       this.AlgemeneWerpBtn.TabIndex = 0;
-      this.AlgemeneWerpBtn.Text = "werp alle teerlingen";
+      this.AlgemeneWerpBtn.Text = "Roll";
       this.AlgemeneWerpBtn.UseVisualStyleBackColor = true;
       this.AlgemeneWerpBtn.Click += new System.EventHandler(this.AlgemeneWerpBtn_Click);
       // 
       // checkBox1
       // 
       this.checkBox1.AutoSize = true;
-      this.checkBox1.Location = new System.Drawing.Point(21, 191);
+      this.checkBox1.Location = new System.Drawing.Point(22, 214);
       this.checkBox1.Name = "checkBox1";
       this.checkBox1.Size = new System.Drawing.Size(54, 17);
       this.checkBox1.TabIndex = 1;
@@ -61,7 +61,7 @@ namespace Yahtzee
       // 
       // RetryBtn
       // 
-      this.RetryBtn.Location = new System.Drawing.Point(348, 185);
+      this.RetryBtn.Location = new System.Drawing.Point(82, 210);
       this.RetryBtn.Name = "RetryBtn";
       this.RetryBtn.Size = new System.Drawing.Size(75, 23);
       this.RetryBtn.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace Yahtzee
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
-      this.ClientSize = new System.Drawing.Size(452, 220);
+      this.ClientSize = new System.Drawing.Size(742, 289);
       this.Controls.Add(this.RetryBtn);
       this.Controls.Add(this.checkBox1);
       this.Controls.Add(this.AlgemeneWerpBtn);
