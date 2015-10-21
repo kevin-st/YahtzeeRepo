@@ -12,11 +12,13 @@ namespace Yahtzee
 {
   public partial class Yahtzee : Form
   {
-    int aantalTeerlingen = 3;
+    int aantalTeerlingen = 5;
     int maxAantalWorpen = 3;
     int aantalWorpen;
     List<TeerlingController> teerlingen = new List<TeerlingController>();
     ScoreController scoreController = new ScoreController();
+    string currentPlayer = "P1";
+    string throwsText = "Throws: ";
 
     public Yahtzee()
     {
@@ -35,6 +37,8 @@ namespace Yahtzee
         int horizontalPosition = i * tView.Width;
         tView.Location = new System.Drawing.Point(horizontalPosition, 0);
         Controls.Add(tView);
+
+        ThrowsLabel.Text = throwsText + aantalWorpen + "/" + maxAantalWorpen;
       }
 
       ScoreView sView = scoreController.GetView();
@@ -56,6 +60,7 @@ namespace Yahtzee
         }
         aantalWorpen++;
       }
+      ThrowsLabel.Text = throwsText + aantalWorpen + "/" + maxAantalWorpen;
       scoreController.UpdateScore();
       scoreController.UpdateUI();
       scoreController.scoreModel.CurrentScore = 0;
@@ -81,11 +86,22 @@ namespace Yahtzee
 
     private void RetryBtn_Click(object sender, EventArgs e)
     {
+      if (currentPlayer == "P1")
+      {
+        currentPlayer = "P2";
+      }
+      else
+      {
+        currentPlayer = "P1";
+      }
+      TurnLabel.Text = currentPlayer;
       aantalWorpen = 0;
       scoreController.scoreModel.CurrentScore = 0;
+      ThrowsLabel.Text = throwsText + aantalWorpen + "/" + maxAantalWorpen;
       for (int i = 0; i < aantalTeerlingen; i++)
       {
-        teerlingen[i].ClearText();
+        teerlingen[i].ClearImage();
+        teerlingen[i].ResetHold();
       }
       scoreController.UpdateScore();
       scoreController.UpdateUI();
