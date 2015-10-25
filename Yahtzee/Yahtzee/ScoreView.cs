@@ -30,7 +30,11 @@ namespace Yahtzee
       ScoreLabel.Text = newScore.ToString();
     }
 
+    private void ScoreView_Load(object sender, EventArgs e)
+    {
 
+    }
+    
 
 
 

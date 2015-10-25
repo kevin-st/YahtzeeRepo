@@ -16,8 +16,9 @@ namespace Yahtzee
     int maxAantalWorpen = 3;
     int aantalWorpen;
     List<TeerlingController> teerlingen = new List<TeerlingController>();
-    ScoreController scoreController = new ScoreController();
-    string currentPlayer = "P1";
+    //ScoreController scoreController = new ScoreController();
+    TurnController turnController = new TurnController();
+    MPScoreController mpScoreController = new MPScoreController();
     string throwsText = "Throws: ";
 
     public Yahtzee()
@@ -41,11 +42,22 @@ namespace Yahtzee
         ThrowsLabel.Text = throwsText + aantalWorpen + "/" + maxAantalWorpen;
       }
 
-      ScoreView sView = scoreController.GetView();
+      //ScoreView sView = scoreController.GetView();
 
-      int scoreHorizontalPosition = aantalTeerlingen * sView.Width;
-      sView.Location = new System.Drawing.Point(scoreHorizontalPosition, 0);
-      Controls.Add(sView);
+      //int scoreHorizontalPosition = aantalTeerlingen * sView.Width;
+      //sView.Location = new System.Drawing.Point(scoreHorizontalPosition, 0);
+      //Controls.Add(sView);
+
+      TurnView turnView = turnController.GetView();
+
+      int turnVerticalPosition = turnView.Height + 100;
+      turnView.Location = new Point(1, turnVerticalPosition);
+      Controls.Add(turnView);
+
+      MPScoreView mpScoreView = mpScoreController.GetView();
+      int mpScoreHorizontalPosition = turnView.Width;
+      mpScoreView.Location = new Point(mpScoreHorizontalPosition, turnVerticalPosition - 6);
+      Controls.Add(mpScoreView);
     }
 
     private void AlgemeneWerpBtn_Click(object sender, EventArgs e)
@@ -56,14 +68,14 @@ namespace Yahtzee
         {
           teerlingen[i].Werp();
           teerlingen[i].UpdateUI();
-          scoreController.scoreModel.CurrentScore += teerlingen[i].teerlingModel.AantalOgen;
+          //scoreController.scoreModel.CurrentScore += teerlingen[i].teerlingModel.AantalOgen;
         }
         aantalWorpen++;
       }
       ThrowsLabel.Text = throwsText + aantalWorpen + "/" + maxAantalWorpen;
-      scoreController.UpdateScore();
-      scoreController.UpdateUI();
-      scoreController.scoreModel.CurrentScore = 0;
+      //scoreController.UpdateScore();
+      //scoreController.UpdateUI();
+      //scoreController.scoreModel.CurrentScore = 0;
     }
 
     private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -86,25 +98,16 @@ namespace Yahtzee
 
     private void RetryBtn_Click(object sender, EventArgs e)
     {
-      if (currentPlayer == "P1")
-      {
-        currentPlayer = "P2";
-      }
-      else
-      {
-        currentPlayer = "P1";
-      }
-      TurnLabel.Text = currentPlayer;
+      turnController.UpdateTurn();
+      turnController.UpdateUI();
       aantalWorpen = 0;
-      scoreController.scoreModel.CurrentScore = 0;
+      //scoreController.scoreModel.CurrentScore = 0;
       ThrowsLabel.Text = throwsText + aantalWorpen + "/" + maxAantalWorpen;
       for (int i = 0; i < aantalTeerlingen; i++)
       {
         teerlingen[i].ClearImage();
         teerlingen[i].ResetHold();
       }
-      scoreController.UpdateScore();
-      scoreController.UpdateUI();
     }
   }
 }

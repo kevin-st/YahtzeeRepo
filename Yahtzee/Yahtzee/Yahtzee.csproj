@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MPScoreController.cs" />
+    <Compile Include="MPScoreModel.cs" />
+    <Compile Include="MPScoreView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MPScoreView.Designer.cs">
+      <DependentUpon>MPScoreView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ScoreController.cs" />
     <Compile Include="ScoreModel.cs" />
     <Compile Include="TeerlingController.cs" />
@@ -55,6 +63,14 @@
     </Compile>
     <Compile Include="ScoreView.Designer.cs">
       <DependentUpon>ScoreView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TurnController.cs" />
+    <Compile Include="TurnModel.cs" />
+    <Compile Include="TurnView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TurnView.Designer.cs">
+      <DependentUpon>TurnView.cs</DependentUpon>
     </Compile>
     <Compile Include="Yahtzee.cs">
       <SubType>Form</SubType>
@@ -70,8 +86,14 @@
     <Compile Include="TeerlingView.Designer.cs">
       <DependentUpon>TeerlingView.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MPScoreView.resx">
+      <DependentUpon>MPScoreView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ScoreView.resx">
       <DependentUpon>ScoreView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TurnView.resx">
+      <DependentUpon>TurnView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Yahtzee.resx">
       <DependentUpon>Yahtzee.cs</DependentUpon>

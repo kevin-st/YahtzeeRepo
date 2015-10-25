@@ -36,8 +36,6 @@ namespace Yahtzee
       this.AlgemeneWerpBtn = new System.Windows.Forms.Button();
       this.checkBox1 = new System.Windows.Forms.CheckBox();
       this.RetryBtn = new System.Windows.Forms.Button();
-      this.TurnLabel = new System.Windows.Forms.Label();
-      this.label2 = new System.Windows.Forms.Label();
       this.ThrowsLabel = new System.Windows.Forms.Label();
       this.SuspendLayout();
       // 
@@ -64,37 +62,13 @@ namespace Yahtzee
       // 
       // RetryBtn
       // 
-      this.RetryBtn.Location = new System.Drawing.Point(19, 210);
+      this.RetryBtn.Location = new System.Drawing.Point(19, 208);
       this.RetryBtn.Name = "RetryBtn";
       this.RetryBtn.Size = new System.Drawing.Size(100, 23);
       this.RetryBtn.TabIndex = 2;
       this.RetryBtn.Text = "Next Player";
       this.RetryBtn.UseVisualStyleBackColor = true;
       this.RetryBtn.Click += new System.EventHandler(this.RetryBtn_Click);
-      // 
-      // TurnLabel
-      // 
-      this.TurnLabel.BackColor = System.Drawing.SystemColors.Control;
-      this.TurnLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.TurnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.TurnLabel.Location = new System.Drawing.Point(19, 267);
-      this.TurnLabel.Name = "TurnLabel";
-      this.TurnLabel.Size = new System.Drawing.Size(100, 50);
-      this.TurnLabel.TabIndex = 3;
-      this.TurnLabel.Text = "P1";
-      this.TurnLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-      // 
-      // label2
-      // 
-      this.label2.BackColor = System.Drawing.Color.White;
-      this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label2.Location = new System.Drawing.Point(19, 243);
-      this.label2.Name = "label2";
-      this.label2.Size = new System.Drawing.Size(100, 20);
-      this.label2.TabIndex = 4;
-      this.label2.Text = "Turn:";
-      this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
       // ThrowsLabel
       // 
@@ -115,8 +89,6 @@ namespace Yahtzee
       this.AutoSize = true;
       this.ClientSize = new System.Drawing.Size(742, 326);
       this.Controls.Add(this.ThrowsLabel);
-      this.Controls.Add(this.label2);
-      this.Controls.Add(this.TurnLabel);
       this.Controls.Add(this.RetryBtn);
       this.Controls.Add(this.checkBox1);
       this.Controls.Add(this.AlgemeneWerpBtn);
@@ -133,8 +105,6 @@ namespace Yahtzee
     private System.Windows.Forms.Button AlgemeneWerpBtn;
     private System.Windows.Forms.CheckBox checkBox1;
     private System.Windows.Forms.Button RetryBtn;
-    private System.Windows.Forms.Label TurnLabel;
-    private System.Windows.Forms.Label label2;
     private System.Windows.Forms.Label ThrowsLabel;
   }
 }
